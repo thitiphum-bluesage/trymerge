@@ -10,4 +10,5 @@ import (
 func RegisterRoutes(e *echo.Echo) {
     e.GET("/hello", handlers.HelloHandler)
     e.GET("/secure", handlers.SecurePage, middleware.BasicAuthMiddleware("user", "pass"))
+    e.POST("/invoice", handlers.HandleInvoice)
 }
